@@ -4383,3 +4383,13 @@ Processing by PostsController#new as HTML
 Completed 200 OK in 72ms (Views: 69.8ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/posts/new" for 72.182.10.227 at 2019-07-14 01:12:36 +0000
+Cannot render console from 72.182.10.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  Rendered posts/_form.html.erb (13.6ms)
+  Rendered posts/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 40ms (Views: 28.3ms | ActiveRecord: 2.1ms)
+
+
