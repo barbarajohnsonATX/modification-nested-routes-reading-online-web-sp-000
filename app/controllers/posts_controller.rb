@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     else
         @post = Post.new(author_id: params[:author_id])
     end
-    @post = Post.new(author_id: params[:author_id])
+     
   end
 
   def create
