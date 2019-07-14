@@ -3985,3 +3985,33 @@ Processing by AuthorsController#index as HTML
 Completed 200 OK in 1302ms (Views: 1277.7ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/authors/11" for 72.182.10.227 at 2019-07-14 00:14:13 +0000
+Cannot render console from 72.182.10.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mAuthor Load (0.7ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 11]]
+  Rendered authors/show.html.erb within layouts/application (45.8ms)
+Completed 200 OK in 88ms (Views: 80.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/authors/11/posts/new" for 72.182.10.227 at 2019-07-14 00:14:15 +0000
+Cannot render console from 72.182.10.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Parameters: {"author_id"=>"11"}
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (61.1ms)
+  Rendered posts/new.html.erb within layouts/application (63.1ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `posts_path' for #<#<Class:0x00007f08514f6428>:0x00007f08514e79f0>):
+    1: <%= form_for(@post) do |f| %>
+    2:   <label>Post title:</label><br>
+    3:   <%= f.text_field :title %><br>
+    4: 
+  
+app/views/posts/_form.html.erb:1:in `_app_views_posts__form_html_erb___2399735792941100685_69836850374480'
+app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__1283968106392383549_69836850314080'
