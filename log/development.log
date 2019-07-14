@@ -4026,3 +4026,22 @@ app/views/posts/new.html.erb:1:in `_app_views_posts_new_html_erb__12839681063923
 DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /usr/local/rvm/gems/ruby-2.6.1/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
 Started GET "/authors" for 72.182.10.227 at 2019-07-14 00:17:20 +0000
 Cannot render console from 72.182.10.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 228ms (Views: 203.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/authors/11" for 72.182.10.227 at 2019-07-14 00:17:23 +0000
+Cannot render console from 72.182.10.227! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 11]]
+  Rendered authors/show.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 114ms (Views: 107.6ms | ActiveRecord: 1.3ms)
+
+
